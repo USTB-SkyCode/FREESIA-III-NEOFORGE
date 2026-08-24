@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.nguyendevs.freesia.neoforgeworker.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ConnectionMixin",
+    "LivingEntityMixin",
+    "MinecraftServerMixin",
+    "PlayerDataStorageMixin",
+    "PlayerListMixin",
+    "ServerCommonPacketListenerImplMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

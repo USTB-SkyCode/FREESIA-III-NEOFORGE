@@ -1,0 +1,13 @@
+{
+  "itemGroup.freesianeoforgeworker": "Example Mod Tab",
+  "block.freesianeoforgeworker.example_block": "Example Block",
+  "item.freesianeoforgeworker.example_item": "Example Item",
+
+  "freesianeoforgeworker.configuration.title": "Freesia-NeoForge-Worker Configs",
+  "freesianeoforgeworker.configuration.section.freesianeoforgeworker.common.toml": "Freesia-NeoForge-Worker Configs",
+  "freesianeoforgeworker.configuration.section.freesianeoforgeworker.common.toml.title": "Freesia-NeoForge-Worker Configs",
+  "freesianeoforgeworker.configuration.items": "Item List",
+  "freesianeoforgeworker.configuration.logDirtBlock": "Log Dirt Block",
+  "freesianeoforgeworker.configuration.magicNumberIntroduction": "Magic Number Text",
+  "freesianeoforgeworker.configuration.magicNumber": "Magic Number"
+}

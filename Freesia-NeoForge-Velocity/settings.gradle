@@ -1,0 +1,27 @@
+pluginManagement {
+    repositories {
+        maven { url = 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url = 'https://maven.aliyun.com/repository/public' }
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        maven { url = 'https://maven.aliyun.com/repository/public' }
+        mavenCentral()
+        // Velocity API
+        maven { url = 'https://repo.papermc.io/repository/maven-public/' }
+        // MCPRotocolLib (fake client to the Worker)
+        maven { url = 'https://repo.opencollab.dev/maven-releases/' }
+        maven { url = 'https://repo.opencollab.dev/maven-snapshots/' }
+        // PacketEvents
+        maven { url = 'https://repo.codemc.io/repository/maven-releases/' }
+        // night-config / sonatype fallbacks
+        maven { url = 'https://oss.sonatype.org/content/groups/public/' }
+    }
+}
+
+rootProject.name = 'Freesia-NeoForge-Velocity'

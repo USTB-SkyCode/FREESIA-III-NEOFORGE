@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+    id 'com.gradleup.shadow' version '8.3.5'
+}
+
+group = 'com.nguyendevs.freesia'
+version = '1.0.0'
+
+base {
+    archivesName = 'Freesia-NeoForge-Velocity'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    maven { url = 'https://maven.aliyun.com/repository/public' }
+    mavenCentral()
+    maven { url = 'https://repo.papermc.io/repository/maven-public/' }
+    maven { url = 'https://repo.opencollab.dev/maven-releases/' }
+    maven { url = 'https://repo.opencollab.dev/maven-snapshots/' }
+    maven { url = 'https://repo.codemc.io/repository/maven-releases/' }
+}
+
+dependencies {
+    // Provided by Velocity at runtime.
+    compileOnly 'com.velocitypowered:velocity-api:3.3.0-SNAPSHOT'
+    compileOnly 'io.netty:netty-all:4.1.115.Final'
+    compileOnly 'org.slf4j:slf4j-api:2.0.13'
+    // PacketEvents (separate Velocity plugin) — used to read the backend JOIN_GAME entity id.
+    compileOnly 'com.github.retrooper:packetevents-velocity:2.8.0'
+
+    // Bundled: MCPRotocolLib lets the proxy connect to the Worker as a vanilla fake client.
+    implementation 'org.geysermc.mcprotocollib:protocol:1.21-SNAPSHOT'
+
+    // Bundled: TOML config parser.
+    implementation 'com.electronwill.night-config:toml:3.6.6'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+}
+
+shadowJar {
+    archiveClassifier = ''
+    mergeServiceFiles()
+}
+
+tasks.named('build') {
+    dependsOn tasks.named('shadowJar')
+}
